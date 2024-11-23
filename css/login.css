@@ -14,7 +14,7 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 15px;
-  background: #1abc9c;
+  background: #f7f7f7; /* Background color for the body */
   overflow: hidden;
 }
 
@@ -28,7 +28,7 @@ body {
 
 .wrapper .title {
   height: 120px;
-  background: #16a085;
+  background: #5DADE2; /* Light blue for title background */
   border-radius: 5px 5px 0 0;
   color: #fff;
   font-size: 30px;
@@ -60,7 +60,7 @@ body {
 }
 
 form .row input:focus {
-  border-color: #16a085;
+  border-color: #5DADE2; /* Light blue border on focus */
 }
 
 form .row input::placeholder {
@@ -73,8 +73,8 @@ form .row input::placeholder {
   height: 100%;
   color: #fff;
   font-size: 22px;
-  background: #16a085;
-  border: 1px solid #16a085;
+  background: #5DADE2; /* Light blue for the icon background */
+  border: 1px solid #5DADE2; /* Light blue for the icon border */
   border-radius: 5px 0 0 5px;
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@ form .row input::placeholder {
 }
 
 .wrapper form .pass a {
-  color: #16a085;
+  color: #5DADE2; /* Light blue for password link */
   font-size: 17px;
   text-decoration: none;
 }
@@ -101,13 +101,13 @@ form .row input::placeholder {
   font-size: 20px;
   font-weight: 500;
   padding-left: 0px;
-  background: #16a085;
-  border: 1px solid #16a085;
+  background: #5DADE2; /* Light blue for button background */
+  border: 1px solid #5DADE2; /* Light blue border for button */
   cursor: pointer;
 }
 
 form .button input:hover {
-  background: #12876f;
+  background: #FFFACD; /* Light yellow on hover */
 }
 
 .wrapper form .signup-link {
@@ -117,7 +117,7 @@ form .button input:hover {
 }
 
 .wrapper form .signup-link a {
-  color: #16a085;
+  color: #5DADE2; /* Light blue for the signup link */
   text-decoration: none;
 }
 

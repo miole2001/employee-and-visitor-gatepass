@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Landing Page</title>
+  <title>EAVG | Landing Page</title>
   <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
   <nav class="navbar">
     <div class="navbar-container">
       <div class="navbar-logo">
-        <a href="#">MyWebsite</a>
+        <a href="#">EAVG</a>
       </div>
       <div class="navbar-links">
         <a href="login.php">Login</a>
@@ -25,8 +25,8 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Welcome to Your Future</h1>
-      <p class="hero-subtitle">Empowering your journey with innovative solutions.</p>
+      <h1 class="hero-title">Emplyee and Visitor Gatepass</h1>
+      <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, iusto.</p>
       <a href="login.php" class="cta-button">Get Started</a>
     </div>
   </section>
