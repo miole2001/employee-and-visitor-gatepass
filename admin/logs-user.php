@@ -1,0 +1,61 @@
+<?php
+    include('../includes/admin-header.php');
+?>
+<main>
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Student Logs</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="admin.php">Admin</a></li>
+            <li class="breadcrumb-item active">Student Logs</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-body">
+                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                .
+            </div>
+        </div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <br>
+            </div>
+            <div class="card-body">
+                <table id="datatablesSimple">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Office</th>
+                            <th>Age</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td>2011/04/25</td>
+                            <td>$320,800</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+<?php include('../includes/footer.php');?>
+<?php include('../includes/scripts.php');?>
