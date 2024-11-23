@@ -5,11 +5,11 @@
 
 
    //DATABASE CONNECTION FOR ACCOUNTS
-   $db_name = 'mysql:host=localhost;dbname=avms_accounts';
+   $db_name = 'mysql:host=localhost;dbname=eavg_accounts';
    $db_user_name = 'root';
    $db_user_pass = '';
 
-   $connAccounts = new PDO($db_name, $db_user_name, $db_user_pass);
+   $connForAccounts = new PDO($db_name, $db_user_name, $db_user_pass);
 
    function create_unique_id(){
       $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -30,17 +30,17 @@
 
    //DATABASE CONNECTION FOR ADMIN & USER LOGS
 
-   $db_name = 'mysql:host=localhost;dbname=avms_logs';
+   $db_name = 'mysql:host=localhost;dbname=eavg_logs';
    $db_user_name = 'root';
    $db_user_pass = '';
 
-   $connLogs = new PDO($db_name, $db_user_name, $db_user_pass);
+   $connForLogs = new PDO($db_name, $db_user_name, $db_user_pass);
 
    //DATABASE CONNECTION FOR OTHER DATA
 
-   $db_name = 'mysql:host=localhost;dbname=avms_data';
-   $db_user_name = 'root';
-   $db_user_pass = '';
+   // $db_name = 'mysql:host=localhost;dbname=avms_data';
+   // $db_user_name = 'root';
+   // $db_user_pass = '';
 
-   $connData = new PDO($db_name, $db_user_name, $db_user_pass);
+   // $connData = new PDO($db_name, $db_user_name, $db_user_pass);
 ?>

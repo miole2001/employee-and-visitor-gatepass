@@ -1,12 +1,12 @@
 <?php
-    include('../includes/user-header.php');
+    include('../includes/employee-header.php');
 ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Student Logs</h1>
+        <h1 class="mt-4">Employee Logs</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="student.php">Student</a></li>
-            <li class="breadcrumb-item active">Student Logs</li>
+            <li class="breadcrumb-item"><a href="employee.php">Employee</a></li>
+            <li class="breadcrumb-item active">Employee Logs</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">

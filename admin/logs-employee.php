@@ -3,10 +3,10 @@
 ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Student Accounts</h1>
+        <h1 class="mt-4">Employee Logs</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="admin.php">Admin</a></li>
-            <li class="breadcrumb-item active">Student Accounts</li>
+            <li class="breadcrumb-item active">Employee Logs</li>
         </ol>
         <div class="card mb-4">
             <div class="card-body">

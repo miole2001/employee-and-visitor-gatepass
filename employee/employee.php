@@ -1,5 +1,5 @@
 <?php
-    include('../includes/user-header.php');
+    include('../includes/employee-header.php');
 ?>
 
 
@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-sm-3 mb-3">
                 <div class="card">
-                    <img class="card-img-top" src="../images/profile1.png" alt="Card image cap">
+                    <img class="card-img-top" src="../images/profile/profile1.png" alt="Card image cap">
                     <div class="card-body">
                         <h3 class="card-title mb-4 text-center text-uppercase">title</h3>
                         <p class="card-text">Room Number: </p>

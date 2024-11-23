@@ -1,5 +1,5 @@
 <?php
-    include('../includes/user-header.php');
+    include('../includes/employee-header.php');
 ?>
 
 <main>
@@ -7,7 +7,7 @@
 
         <h1 class="mt-4">My Profile</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="student.php">Student</a></li>
+            <li class="breadcrumb-item"><a href="employee.php">Employee</a></li>
             <li class="breadcrumb-item active">Profile</li>
         </ol>
 

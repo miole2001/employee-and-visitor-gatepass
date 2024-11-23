@@ -11,7 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>BSIT - SRMS | ADMIN</title>
+        <title>EAVG | ADMIN</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand text-white" style="background-color: #16a085;">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3 text-white" href="admin.php">BSIT-SRMS</a>
+            <a class="navbar-brand ps-3 text-white" href="admin.php">EAVG</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="admin.php">
                 <i class="fas fa-bars text-white"></i>
@@ -43,7 +43,7 @@
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading text-white">Core</div>
 
-                            <a class="nav-link text-white" href="student.php">
+                            <a class="nav-link text-white" href="employee.php">
                                 <div class="sb-nav-link-icon text-white"><i class="fas fa-tachometer-alt text-white"></i></div>
                                 Card
                             </a>
@@ -59,18 +59,11 @@
 
                             <div class="sb-sidenav-menu-heading text-white">Addons</div>
 
-                            <a class="nav-link text-white" href="logs-user.php">
+                            <a class="nav-link text-white" href="logs-employee.php">
                                 <div class="sb-nav-link-icon">
                                     <i class="fas fa-table text-white"></i>
                                 </div>
-                                Student Logs
-                            </a>
-
-                            <a class="nav-link text-white" href="table.php">
-                                <div class="sb-nav-link-icon">
-                                    <i class="fas fa-table  text-white"></i>
-                                </div>
-                                Tables
+                                Employee Logs
                             </a>
 
                             <a class="nav-link text-white" href="../logout.php">
