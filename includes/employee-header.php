@@ -1,6 +1,11 @@
 <?php
     include('../connection.php');
     include('../includes/alerts.php');
+
+    $select_employee = $connForAccounts->prepare("SELECT * FROM `employee_accounts` WHERE id = ? LIMIT 1");
+    $select_employee->execute([$user_id]);
+    $employee = $select_employee->fetch(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +82,7 @@
                     </div>
                     <div class="sb-sidenav-footer" style="background-color: #2C3E50;">
                         <div class=" text-white">Logged in as:</div>
-                        <h5 class="text-center text-white">your name</h5>
+                        <h5 class="text-center text-white"><?php echo ($employee['name']); ?></h5>
                     </div>
                 </nav>
             </div>

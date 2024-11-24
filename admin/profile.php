@@ -18,15 +18,14 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="210">
+                                    <img src="<?php echo "../images/profile/" . $admin['image']; ?>" alt="profile" class="rounded-circle p-1 bg-primary" width="210">
                                     <div class="mt-3">
-                                        <h4>John Doe</h4>
-                                        <p class="text-secondary mb-1">Full Stack Developer</p>
-                                        <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                                        <h4 class="text-uppercase"><?php echo ($admin['name']); ?></h4>
+                                        <p class="text-secondary mb-1 mt-3"><?php echo ($admin['email']); ?></p>
 
                                         <!-- Button trigger modal -->
 
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addModal">
+                                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addModal">
                                             Modal
                                         </button>
                                     </div>
@@ -38,46 +37,34 @@
                     <div class="col-lg-8">
                         <div class="card">
                             <div class="card-body">
+
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Full Name</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="John Doe" readonly>
+                                        <input type="text" class="form-control" name="name" value="<?php echo ($admin['name']); ?>" readonly>
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
                                         <h6 class="mb-0">Email</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="john@example.com" readonly>
+                                        <input type="text" class="form-control" name="email" value="<?php echo ($admin['email']); ?>" readonly>
                                     </div>
                                 </div>
+
                                 <div class="row mb-3">
                                     <div class="col-sm-3">
-                                        <h6 class="mb-0">Phone</h6>
+                                        <h6 class="mb-0">Password</h6>
                                     </div>
                                     <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="(239) 816-9029" readonly>
+                                        <input type="text" class="form-control" name="password" value="<?php echo ($admin['password']); ?>" readonly>
                                     </div>
                                 </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Mobile</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="(320) 380-4539" readonly>
-                                    </div>
-                                </div>
-                                <div class="row mb-3">
-                                    <div class="col-sm-3">
-                                        <h6 class="mb-0">Address</h6>
-                                    </div>
-                                    <div class="col-sm-9 text-secondary">
-                                        <input type="text" class="form-control" value="Bay Area, San Francisco, CA" readonly>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>
