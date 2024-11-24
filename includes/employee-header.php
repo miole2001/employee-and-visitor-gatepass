@@ -52,7 +52,7 @@
 
                             <a class="nav-link text-white" href="profile.php">
                                 <div class="sb-nav-link-icon">
-                                    <i class="fas fa-table text-white"></i>
+                                    <i class="fas fa-user-cog text-white"></i>
                                 </div>
                                 My Profile
                             </a>
@@ -61,14 +61,14 @@
 
                             <a class="nav-link text-white" href="logs-employee.php">
                                 <div class="sb-nav-link-icon">
-                                    <i class="fas fa-table text-white"></i>
+                                    <i class="fas fa-file-alt text-white"></i>
                                 </div>
                                 Employee Logs
                             </a>
 
-                            <a class="nav-link text-white" href="../logout.php">
+                            <a class="nav-link text-white" href="#" id="logout">
                                 <div class="sb-nav-link-icon">
-                                    <i class="fas fa-table  text-white"></i>
+                                    <i class="fas fa-sign-out-alt text-white"></i>
                                 </div>
                                 Logout
                             </a>
