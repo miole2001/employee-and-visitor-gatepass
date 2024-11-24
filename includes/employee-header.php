@@ -27,7 +27,7 @@
     </style>
 
     <body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand text-white" style="background-color: #16a085;">
+        <nav class="sb-topnav navbar navbar-expand text-white" style="background-color: #5DADE2;">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3 text-white" href="admin.php">EAVG</a>
             <!-- Sidebar Toggle-->
@@ -38,7 +38,7 @@
 
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
-                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion" style="background-color: #1abc9c;">
+                <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion" style="background-color: #5DADE2;">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading text-white">Core</div>
@@ -75,7 +75,7 @@
 
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer" style="background-color: #16a085;">
+                    <div class="sb-sidenav-footer" style="background-color: #2C3E50;">
                         <div class=" text-white">Logged in as:</div>
                         <h5 class="text-center text-white">your name</h5>
                     </div>

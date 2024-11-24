@@ -21,7 +21,7 @@ if (isset($_COOKIE['user_id'])) {
         $log_stmt->execute([$email, $user_type]);
     } else {
 
-        $verify_employee = $connForAccounts->prepare("SELECT email FROM `user_accounts` WHERE id = ?");
+        $verify_employee = $connForAccounts->prepare("SELECT email FROM `employee_accounts` WHERE id = ?");
         $verify_employee->execute([$user_id]);
 
         if ($verify_employee->rowCount() > 0) {

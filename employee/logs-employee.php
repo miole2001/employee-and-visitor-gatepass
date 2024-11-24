@@ -8,14 +8,9 @@
             <li class="breadcrumb-item"><a href="employee.php">Employee</a></li>
             <li class="breadcrumb-item active">Employee Logs</li>
         </ol>
-        <div class="card mb-4">
-            <div class="card-body">
-                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
-                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
-                .
-            </div>
-        </div>
-        <div class="card mb-4">
+
+        
+        <div class="card mb-4 mt-4">
             <div class="card-header">
                 <br>
             </div>
@@ -23,22 +18,18 @@
                 <table id="datatablesSimple">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Activity</th>
+                            <th>Timestamp</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Activity</th>
+                            <th>Timestamp</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -47,8 +38,6 @@
                             <td>System Architect</td>
                             <td>Edinburgh</td>
                             <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
                         </tr>
                     </tbody>
                 </table>
