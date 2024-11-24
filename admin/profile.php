@@ -1,6 +1,35 @@
 <?php
+    ob_start(); 
     include('../includes/admin-header.php');
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        if (!empty($password)) {
+
+            // If the user provided a new password, hash it
+            $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+        } else {
+
+            // If the password field is empty, keep the existing password
+            $hashed_password = $admin['password'];
+        }
+
+        // Prepare the update SQL query
+        $update_sql = "UPDATE `admin_accounts` SET `name` = ?, `email` = ?, `password` = ? WHERE `id` = ?";
+        $stmt_update = $connForAccounts->prepare($update_sql);
+        
+        $stmt_update->execute([$name, $email, $hashed_password, $user_id]);
+
+        // Redirect to profile page after update
+        header('Location: profile.php');
+        exit;
+    }
 ?>
+
 
 <main>
     <div class="container-fluid px-4">
@@ -25,8 +54,8 @@
 
                                         <!-- Button trigger modal -->
 
-                                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#addModal">
-                                            Modal
+                                        <button type="button" class="btn btn-primary mt-3" data-toggle="modal" data-target="#editProfile">
+                                            Edit Profile
                                         </button>
                                     </div>
                                 </div>
@@ -74,43 +103,39 @@
     </div>
 </main>
 
-<!-- add Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalTitle" aria-hidden="true">
+<!-- edit profile Modal -->
+<div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="editProfileTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="addModalTitle">Add Modal</h5>
+                <h5 class="modal-title" id="editProfileTitle">Edit Profile</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form action="" method="post" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="profile">Upload Profile</label>
-                        <input type="file" class="form-control" id="profile" name="profile" required>
-                    </div>
 
                     <div class="form-group">
-                        <label for="candidate_name">Candidate Name</label>
-                        <input type="text" class="form-control" id="candidate_name" name="candidate_name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="position">Position</label>
-                        <input type="text" class="form-control" id="position" name="position" required>
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="<?php echo ($admin['name']); ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="text" class="form-control" id="email" name="email" value="<?php echo ($admin['email']); ?>">
                     </div>
 
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="add_modal">Save changes</button>
-            </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Leave empty to keep current password">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" name="edit_profile">Save changes</button>
+                </div>
             </form>
         </div>
     </div>
