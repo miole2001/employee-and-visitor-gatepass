@@ -1,4 +1,5 @@
 <?php
+    ob_start(); 
     include('../connection.php');
     include('../includes/alerts.php');
 
@@ -71,6 +72,38 @@
                                 Employee Accounts
                             </a>
 
+                            <div class="sb-sidenav-menu-heading text-white">Gatepass</div>
+
+                            <a class="nav-link collapsed text-white" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-tie text-white"></i></div>
+                                Employee Gatepass
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down text-white"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link text-white" href="employee-enter.php">Gatepass Enter</a>
+                                    <a class="nav-link text-white" href="employee-exit.php">Gatepass Exit</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed text-white" href="#" data-bs-toggle="collapse" data-bs-target="#guest" aria-expanded="false" aria-controls="guest">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-tie text-white"></i></div>
+                                Guest Gatepass
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down text-white"></i></div>
+                            </a>
+                            <div class="collapse" id="guest" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link text-white" href="guest-enter.php">Gatepass Enter</a>
+                                    <a class="nav-link text-white" href="guest-exit.php">Gatepass Exit</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link text-white" href="guest-form.php">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-file-alt text-white"></i>
+                                </div>
+                                Guest Pass Form
+                            </a>
 
                             <div class="sb-sidenav-menu-heading text-white">Logs</div>
 
@@ -86,13 +119,6 @@
                                     <i class="fas fa-file-alt text-white"></i>
                                 </div>
                                 Employee Logs
-                            </a>
-
-                            <a class="nav-link text-white" href="table.php">
-                                <div class="sb-nav-link-icon">
-                                    <i class="fas fa-table text-white"></i>
-                                </div>
-                                Tables
                             </a>
 
                             <a class="nav-link text-white" href="#" id="logout">

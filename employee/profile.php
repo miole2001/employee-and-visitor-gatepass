@@ -5,6 +5,7 @@
         // Get updated values from form
         $name = $_POST['name'];
         $email = $_POST['email'];
+        $number = $_POST['number'];
         $password = $_POST['password'];
 
         if (!empty($password)) {
@@ -18,10 +19,10 @@
         }
 
         // Prepare the update SQL query
-        $update_sql = "UPDATE `employee_accounts` SET `name` = ?, `email` = ?, `password` = ? WHERE `id` = ?";
+        $update_sql = "UPDATE `employee_accounts` SET `name` = ?, `email` = ?, `contact_number` = ?, `password` = ? WHERE `id` = ?";
         $stmt_update = $connForAccounts->prepare($update_sql);
         
-        $stmt_update->execute([$name, $email, $hashed_password, $user_id]);
+        $stmt_update->execute([$name, $email, $number, $hashed_password, $user_id]);
 
         // Redirect to profile page after update
         header('Location: profile.php');
@@ -80,6 +81,15 @@
                                     </div>
                                     <div class="col-sm-9 text-secondary">
                                         <input type="text" class="form-control" name="email" value="<?php echo ($employee['email']); ?>" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-sm-3">
+                                        <h6 class="mb-0">Contact Number</h6>
+                                    </div>
+                                    <div class="col-sm-9 text-secondary">
+                                        <input type="text" class="form-control" name="number" value="<?php echo ($employee['contact_number']); ?>" readonly>
                                     </div>
                                 </div>
 

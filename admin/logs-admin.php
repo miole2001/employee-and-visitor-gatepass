@@ -66,7 +66,7 @@
                                 <td><?php echo $count++; ?></td>
                                 <td><?php echo ($logs['email']); ?></td>
                                 <td><?php echo ($logs['activity']); ?></td>
-                                <td><?php echo ($logs['timestamp']); ?></td>
+                                <td><?php echo date('F j, Y h:i A', strtotime($logs['timestamp'])); ?></td>
                                 <td>
                                     <form method="POST" action="" class="delete-form">
                                         <input type="hidden" name="delete_id" value="<?php echo ($logs['id']); ?>">

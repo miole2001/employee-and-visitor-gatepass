@@ -38,9 +38,9 @@
 
    //DATABASE CONNECTION FOR OTHER DATA
 
-   // $db_name = 'mysql:host=localhost;dbname=avms_data';
-   // $db_user_name = 'root';
-   // $db_user_pass = '';
+   $db_name = 'mysql:host=localhost;dbname=eavg_gatepass';
+   $db_user_name = 'root';
+   $db_user_pass = '';
 
-   // $connData = new PDO($db_name, $db_user_name, $db_user_pass);
+   $connGatepass = new PDO($db_name, $db_user_name, $db_user_pass);
 ?>

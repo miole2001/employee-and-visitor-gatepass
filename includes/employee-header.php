@@ -1,4 +1,5 @@
 <?php
+    ob_start(); 
     include('../connection.php');
     include('../includes/alerts.php');
 
@@ -50,7 +51,7 @@
 
                             <a class="nav-link text-white" href="employee.php">
                                 <div class="sb-nav-link-icon text-white"><i class="fas fa-tachometer-alt text-white"></i></div>
-                                Card
+                                Employee Pass Form
                             </a>
 
                             <div class="sb-sidenav-menu-heading text-white">Interface</div>
@@ -60,6 +61,20 @@
                                     <i class="fas fa-user-cog text-white"></i>
                                 </div>
                                 My Profile
+                            </a>
+
+                            <a class="nav-link text-white" href="enter.php">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-user-cog text-white"></i>
+                                </div>
+                                Employee Enter
+                            </a>
+
+                            <a class="nav-link text-white" href="exit.php">
+                                <div class="sb-nav-link-icon">
+                                    <i class="fas fa-user-cog text-white"></i>
+                                </div>
+                                Employee Exit
                             </a>
 
                             <div class="sb-sidenav-menu-heading text-white">Addons</div>

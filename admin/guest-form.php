@@ -1,21 +1,21 @@
 <?php
-    include('../includes/employee-header.php');
+    include('../includes/admin-header.php');
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
         $name = $_POST['name'];
-        $employeeEmail = $_POST['employeeEmail'];
-        $employeePhone = $_POST['employeePhone'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
         $date = $_POST['date'];
         $time = $_POST['time'];
         $department = $_POST['department'];
         $type = $_POST['type'];
 
-        $insert_sql = "INSERT INTO `employee_gatepass` (`employee_name`, `employee_email`, `employee_number`, `date_log`, `time_log`, `department`, `type`) 
+        $insert_sql = "INSERT INTO `guest_gatepass` (`guest_name`, `guest_email`, `guest_number`, `date_log`, `time_log`, `department`, `type`) 
         VALUES (?, ?, ?, ?, ?, ?, ?)";
         $stmt_insert = $connGatepass->prepare($insert_sql);
-        $stmt_insert->execute([$name, $employeeEmail, $employeePhone, $date, $time, $department, $type]);
+        $stmt_insert->execute([$name, $email, $phone, $date, $time, $department, $type]);
 
-        header('Location: employee.php');
+        header('Location: guest-form.php');
         exit;
 
     }
@@ -39,22 +39,20 @@
             <div class="card-body">
                 <form action="#" method="POST">
 
-                    <?php foreach ($employee_display as $employee): ?>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Employee Name</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<?php echo($employee['name']); ?>" readonly>
-                        </div>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Employee Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name" required>
+                    </div>
 
-                        <div class="mb-3">
-                            <label for="employeeEmail" class="form-label">Employee Email</label>
-                            <input type="email" class="form-control" id="employeeEmail" name="employeeEmail" value="<?php echo($employee['email']); ?>" readonly>
-                        </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Employee Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
+                    </div>
                     
-                        <div class="mb-3">
-                            <label for="employeePhone" class="form-label">Employee Phone</label>
-                            <input type="number" class="form-control" id="employeePhone" name="employeePhone" value="<?php echo($employee['contact_number']); ?>" readonly>
-                        </div>
-                    <?php endforeach; ?>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Employee Phone</label>
+                        <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Contact Number">
+                    </div>
 
                     <div class="mb-3">
                         <label for="date" class="form-label">Date Logged in</label>

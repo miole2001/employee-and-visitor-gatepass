@@ -1,37 +1,37 @@
 <?php
     include('../includes/admin-header.php');
-    
+        
     // HANDLE DELETE REQUEST
-    if (isset($_POST['delete_logs'])) {
+    if (isset($_POST['delete_gatepass'])) {
         $delete_id = $_POST['delete_id'];
 
-        $verify_delete = $connForLogs->prepare("SELECT * FROM `employee_logs` WHERE id = ?");
+        $verify_delete = $connGatepass->prepare("SELECT * FROM `employee_gatepass` WHERE id = ?");
         $verify_delete->execute([$delete_id]);
 
         if ($verify_delete->rowCount() > 0) {
-            $delete_logs = $connForLogs->prepare("DELETE FROM `employee_logs` WHERE id = ?");
-            if ($delete_logs->execute([$delete_id])) {
-                $success_msg = 'Log deleted!';
+            $delete_gatepass = $connGatepass->prepare("DELETE FROM `employee_gatepass` WHERE id = ?");
+            if ($delete_gatepass->execute([$delete_id])) {
+                $success_msg = 'Data deleted!';
             } else {
-                $error_msg = 'Error deleting log.';
+                $error_msg = 'Error deleting Data.';
             }
         } else {
-            $warning_msg = 'Log already deleted!';
+            $warning_msg = 'Data already deleted!';
         }
     }
 
     // FETCH ALL DATA OF LOGS
-    $employee_logs = $connForLogs->query("SELECT * FROM `employee_logs`")->fetchAll(PDO::FETCH_ASSOC);
+    $employee_gatepass = $connGatepass->query("SELECT * FROM `employee_gatepass` WHERE type = 'Enter'")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <main>
     <div class="container-fluid px-4">
-        <h1 class="mt-4">Employee Logs</h1>
+        <h1 class="mt-4">Tables</h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item"><a href="admin.php">Admin</a></li>
-            <li class="breadcrumb-item active">Employee Logs</li>
+            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+            <li class="breadcrumb-item active">Table</li>
         </ol>
-
+        
         
         <div class="card mb-4 mt-4">
             <div class="card-header">
@@ -42,35 +42,47 @@
                     <thead>
                         <tr>
                             <th>#</th>
+                            <th>Name</th>
                             <th>Email</th>
-                            <th>Activity</th>
-                            <th>Timestamp</th>
+                            <th>Contact #</th>
+                            <th>Date Log</th>
+                            <th>Time Log</th>
+                            <th>Department</th>
+                            <th>Type</th>
                             <th>Action(s)</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>#</th>
+                            <th>Name</th>
                             <th>Email</th>
-                            <th>Activity</th>
-                            <th>Timestamp</th>
+                            <th>Contact #</th>
+                            <th>Date Log</th>
+                            <th>Time Log</th>
+                            <th>Department</th>
+                            <th>Type</th>
                             <th>Action(s)</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php
                             $count = 1;
-                            foreach ($employee_logs as $logs):
+                            foreach ($employee_gatepass as $employee):
                             ?>
                             <tr>
                                 <td><?php echo $count++; ?></td>
-                                <td><?php echo ($logs['email']); ?></td>
-                                <td><?php echo ($logs['activity']); ?></td>
-                                <td><?php echo date('F j, Y h:i A', strtotime($logs['timestamp'])); ?></td>
+                                <td><?php echo ($employee['employee_name']); ?></td>
+                                <td><?php echo ($employee['employee_email']); ?></td>
+                                <td><?php echo ($employee['employee_number']); ?></td>
+                                <td><?php echo date('F j, Y', strtotime($employee['date_log'])); ?></td>
+                                <td><?php echo date('h:i A', strtotime($employee['time_log'])); ?></td>
+                                <td><?php echo ($employee['department']); ?></td>
+                                <td><?php echo ($employee['type']); ?></td>
                                 <td>
                                     <form method="POST" action="" class="delete-form">
                                         <input type="hidden" name="delete_id" value="<?php echo ($logs['id']); ?>">
-                                        <input type="hidden" name="delete_logs" value="1">
+                                        <input type="hidden" name="delete_gatepass" value="1">
                                         <button type="submit" class="btn btn-danger btn-sm delete-button">Delete</button>
                                     </form>
                                 </td>

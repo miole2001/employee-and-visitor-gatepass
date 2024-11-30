@@ -46,13 +46,26 @@
                             <th>Profile</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Contact #</th>
                             <th>Password</th>
                             <th>Date Registered</th>
                             <th>Action(s)</th>
                         </tr>
                     </thead>
                     <tfoot>
-                    <?php
+                        <tr>
+                            <th>#</th>
+                            <th>Profile</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Contact #</th>
+                            <th>Password</th>
+                            <th>Date Registered</th>
+                            <th>Action(s)</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        <?php
                             $count = 1;
                             foreach ($employee_accounts as $accounts):
                             ?>
@@ -61,8 +74,9 @@
                                 <td><img src="../images/profile/<?php echo ($accounts['image']); ?>" alt="Image" style="width: 100px; height: auto;"></td>
                                 <td><?php echo ($accounts['name']); ?></td>
                                 <td><?php echo ($accounts['email']); ?></td>
+                                <td><?php echo ($accounts['contact_number']); ?></td>
                                 <td><?php echo ($accounts['password']); ?></td>
-                                <td><?php echo ($accounts['date_registered']); ?></td>
+                                <td><?php echo date('F j, Y h:i A', strtotime($accounts['date_registered'])); ?></td>
                                 <td>
                                     <form method="POST" action="" class="delete-form">
                                         <input type="hidden" name="delete_id" value="<?php echo ($accounts['id']); ?>">
@@ -72,16 +86,6 @@
                                 </td>
                             </tr>
                         <?php endforeach; ?>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
